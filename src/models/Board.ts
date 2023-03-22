@@ -6,9 +6,12 @@ import {King} from "./figures/King";
 import {Bishop} from "./figures/Bishop";
 import {Knight} from "./figures/Knight";
 import {Rook} from "./figures/Rook";
+import {Figure} from "./figures/Figure";
 
 export class Board {
   cells: Cell[][] = []
+  lostBlackFigures: Figure[] = []
+  lostWhiteFigures: Figure[] = []
 
   public initCells() {
     for (let i = 0; i < 8; i++) {
@@ -27,6 +30,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board();
     newBoard.cells = this.cells;
+    newBoard.lostWhiteFigures = this.lostWhiteFigures
+    newBoard.lostBlackFigures = this.lostBlackFigures
     return newBoard;
   }
 
@@ -62,17 +67,17 @@ export class Board {
   }
 
   private addBishops() {
-    new Bishop(Colors.BLACK, this.getCell(1, 0))
-    new Bishop(Colors.BLACK, this.getCell(6, 0))
-    new Bishop(Colors.WHITE, this.getCell(1, 7))
-    new Bishop(Colors.WHITE, this.getCell(6, 7))
+    new Bishop(Colors.BLACK, this.getCell(2, 0))
+    new Bishop(Colors.BLACK, this.getCell(5, 0))
+    new Bishop(Colors.WHITE, this.getCell(2, 7))
+    new Bishop(Colors.WHITE, this.getCell(5, 7))
   }
 
   private addKnights() {
-    new Knight(Colors.BLACK, this.getCell(2, 0))
-    new Knight(Colors.BLACK, this.getCell(5, 0))
-    new Knight(Colors.WHITE, this.getCell(2, 7))
-    new Knight(Colors.WHITE, this.getCell(5, 7))
+    new Knight(Colors.BLACK, this.getCell(1, 0))
+    new Knight(Colors.BLACK, this.getCell(6, 0))
+    new Knight(Colors.WHITE, this.getCell(1, 7))
+    new Knight(Colors.WHITE, this.getCell(6, 7))
   }
 
   private addRooks() {

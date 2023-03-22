@@ -1,8 +1,8 @@
 :root {
     --main-cell1-color: #dea66f;
     --main-cell2-color: #9d6b3a;
-    --main-selected-cell-color: #5b2301;
-    --main-attack-steps-color: #ff0000;
+    --main-selected-cell-color: #0c7c2c;
+    --main-attack-steps-color: #d51d1e;
 }
 
 * {
@@ -52,13 +52,36 @@
 }
 
 .available {
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     background-color: var(--main-attack-steps-color);
 }
 
 .availableForAttack {
     background-color: var(--main-attack-steps-color);
+}
+
+.currentPlayer {
+    margin-bottom: 10px;
+}
+
+.lost {
+    height: calc(50vh - 60px);
+    padding: 30px;
+    margin-left: 50px;
+    background-color: lightgray;
+}
+
+.titleAndLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTitle {
+    font-family: "Calibri";
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
