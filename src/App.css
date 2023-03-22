@@ -2,6 +2,7 @@
     --main-cell1-color: #dea66f;
     --main-cell2-color: #9d6b3a;
     --main-selected-cell-color: #5b2301;
+    --main-attack-steps-color: #ff0000;
 }
 
 * {
@@ -18,23 +19,23 @@
 }
 
 .board {
-    width: calc(64px *8);
-    height: calc(64px *8);
+    width: calc(80px *8);
+    height: calc(80px *8);
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .cell img {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     position: relative;
 }
 
@@ -48,5 +49,16 @@
 
 .selected {
     background-color: var(--main-selected-cell-color);
+}
+
+.available {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--main-attack-steps-color);
+}
+
+.availableForAttack {
+    background-color: var(--main-attack-steps-color);
 }
 
